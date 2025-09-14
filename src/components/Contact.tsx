@@ -34,8 +34,8 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "Let's connect!",
-      href: "mailto:shruti.ughade@example.com",
+      value: "shrutiughade01@gmail.com",
+      href: "mailto:shrutiughade01@gmail.com",
     },
     {
       icon: MapPin,
@@ -49,13 +49,13 @@ const Contact = () => {
     {
       icon: Github,
       label: "GitHub",
-      href: "#",
+      href: "https://github.com/ShrutiUghade",
       color: "hover:text-gray-400",
     },
     {
       icon: Linkedin,
-      label: "LinkedIn",
-      href: "#",
+      label: "LinkedIn", 
+      href: "https://linkedin.com/in/shrutiughade",
       color: "hover:text-blue-400",
     },
     {
@@ -69,13 +69,16 @@ const Contact = () => {
   return (
     <section id="contact" className="py-20 bg-background-secondary">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Get In <span className="bg-gradient-primary bg-clip-text text-transparent">Touch</span>
+        {/* Netflix-Style Header */}
+        <div className="mb-16">
+          <h2 className="text-4xl md:text-6xl font-black mb-4 text-foreground" 
+              style={{ fontFamily: 'Montserrat, sans-serif' }}>
+            Get In <span className="text-netflix-glow">Touch</span>
           </h2>
-          <div className="section-divider"></div>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            I'm always excited to discuss new opportunities, collaborate on projects, or just have a chat about technology and design.
+          <div className="section-divider-netflix"></div>
+          <p className="text-lg text-muted-foreground max-w-3xl">
+            Ready to collaborate? Let's create something amazing together. Whether you have a project in mind 
+            or just want to connect, I'm always excited to discuss new opportunities.
           </p>
         </div>
 
@@ -92,21 +95,21 @@ const Contact = () => {
               </p>
             </div>
 
-            {/* Contact Info Cards */}
+            {/* Netflix-Style Contact Info Cards */}
             <div className="space-y-4">
               {contactInfo.map((info, index) => (
-                <Card key={index} className="card-3d bg-card border-card-border">
+                <Card key={index} className="netflix-card bg-card border-border">
                   <CardContent className="p-6">
                     <a
                       href={info.href}
                       className="flex items-center gap-4 hover:text-primary transition-colors group"
                     >
-                      <div className="p-3 bg-gradient-primary rounded-lg group-hover:scale-110 transition-transform">
+                      <div className="p-3 bg-gradient-red rounded-lg group-hover:scale-110 transition-transform glow-netflix">
                         <info.icon className="h-5 w-5 text-white" />
                       </div>
                       <div>
                         <p className="text-sm text-muted-foreground">{info.label}</p>
-                        <p className="font-semibold">{info.value}</p>
+                        <p className="font-semibold text-foreground">{info.value}</p>
                       </div>
                     </a>
                   </CardContent>
@@ -202,7 +205,7 @@ const Contact = () => {
                   />
                 </div>
 
-                <Button type="submit" size="lg" className="w-full btn-hero group">
+                <Button type="submit" size="lg" className="w-full btn-netflix group">
                   Send Message
                   <Send className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Button>

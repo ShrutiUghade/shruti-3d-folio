@@ -36,14 +36,16 @@ const About = () => {
   return (
     <section id="about" className="py-20 bg-background-secondary">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            About <span className="bg-gradient-primary bg-clip-text text-transparent">Me</span>
+        {/* Netflix-Style Header */}
+        <div className="mb-16">
+          <h2 className="text-4xl md:text-6xl font-black mb-4 text-foreground" 
+              style={{ fontFamily: 'Montserrat, sans-serif' }}>
+            About <span className="text-netflix-glow">Me</span>
           </h2>
-          <div className="section-divider"></div>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            I'm a passionate frontend developer and final-year computer science student 
-            with a keen interest in creating beautiful, functional web experiences.
+          <div className="section-divider-netflix"></div>
+          <p className="text-lg text-muted-foreground max-w-3xl">
+            Discover my journey from a curious student to a passionate developer. 
+            Like a Netflix series, every episode of my learning story builds toward something amazing.
           </p>
         </div>
 

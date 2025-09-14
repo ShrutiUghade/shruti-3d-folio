@@ -1,4 +1,4 @@
-import { ExternalLink, Github, Calendar } from "lucide-react";
+import { Play, Github, Calendar, Code, ExternalLink } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
@@ -7,97 +7,137 @@ const Projects = () => {
     {
       title: "Interactive Web Application",
       year: "2024",
-      description: "A clean, responsive web application with dynamic features built using React.js. Features modern UI components, state management, and seamless user interactions.",
-      technologies: ["React.js", "CSS", "JavaScript", "Responsive Design"],
+      description: "A modern, responsive web application featuring dynamic UI components, state management, and seamless user interactions built with React.js and modern web technologies.",
+      technologies: ["React.js", "CSS3", "JavaScript ES6", "Responsive Design"],
       features: [
-        "Dynamic user interface",
-        "Responsive design",
-        "Interactive components",
-        "Modern styling",
+        "Dynamic user interface with smooth animations",
+        "Responsive design for all device sizes",
+        "Interactive components with state management",
+        "Modern styling with CSS3 features",
       ],
       liveUrl: "#",
       githubUrl: "#",
-      gradient: "from-blue-500 to-purple-600",
+      category: "Web Development",
+      status: "Completed",
+      gradient: "from-blue-600 via-purple-600 to-indigo-600",
     },
     {
       title: "Voice-Activated Virtual Assistant",
       year: "2025",
-      description: "An innovative voice-controlled assistant that integrates with external services. Built with modern web technologies to provide seamless voice interaction capabilities.",
-      technologies: ["JavaScript", "Web Speech API", "External APIs", "HTML", "CSS"],
+      description: "An innovative AI-powered virtual assistant with voice recognition capabilities, external API integrations, and real-time response system built with cutting-edge web technologies.",
+      technologies: ["JavaScript", "Web Speech API", "External APIs", "Python Integration"],
       features: [
-        "Voice recognition",
-        "External service integration",
-        "Real-time responses",
+        "Advanced voice recognition system",
+        "Real-time API integrations",
+        "Intelligent response generation",
         "Cross-platform compatibility",
       ],
       liveUrl: "https://virtual-assistant-shruti.netlify.app/",
       githubUrl: "#",
-      gradient: "from-green-500 to-teal-600",
+      category: "AI & Machine Learning",
+      status: "Live",
+      gradient: "from-green-600 via-teal-600 to-cyan-600",
     },
     {
       title: "Novaspace",
       year: "2025",
-      description: "A responsive marketing website showcasing modern web design principles. Built with vanilla HTML, CSS, and JavaScript focusing on performance and user experience.",
-      technologies: ["HTML", "CSS", "JavaScript", "Responsive Design"],
+      description: "A stunning marketing website showcasing modern web design principles with emphasis on performance, accessibility, and user experience. Built with vanilla technologies for optimal speed.",
+      technologies: ["HTML5", "CSS3", "Vanilla JavaScript", "Performance Optimization"],
       features: [
-        "Modern design",
-        "Responsive layout",
-        "Smooth animations",
-        "Cross-browser compatibility",
+        "Ultra-fast loading performance",
+        "Modern responsive design",
+        "Smooth scroll animations",
+        "SEO optimized structure",
       ],
       liveUrl: "#",
       githubUrl: "#",
-      gradient: "from-pink-500 to-rose-600",
+      category: "Web Design",
+      status: "Completed",
+      gradient: "from-pink-600 via-rose-600 to-red-600",
     },
   ];
 
   return (
     <section id="projects" className="py-20 bg-background-secondary">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            My <span className="bg-gradient-primary bg-clip-text text-transparent">Projects</span>
+        {/* Netflix-Style Section Header */}
+        <div className="mb-16">
+          <h2 className="text-4xl md:text-6xl font-black mb-4 text-foreground" 
+              style={{ fontFamily: 'Montserrat, sans-serif' }}>
+            My <span className="text-netflix-glow">Projects</span>
           </h2>
-          <div className="section-divider"></div>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Here are some of the projects I've worked on. Each project represents my journey in learning and applying new technologies.
+          <div className="section-divider-netflix"></div>
+          <p className="text-lg text-muted-foreground max-w-3xl">
+            Explore my portfolio like a streaming library. Each project represents a unique story 
+            of learning, creativity, and technical growth in my development journey.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Netflix-Style Projects Grid */}
+        <div className="netflix-scroll">
           {projects.map((project, index) => (
-            <Card key={index} className="card-3d bg-card border-card-border overflow-hidden group">
-              <CardContent className="p-0">
-                {/* Project Header */}
+            <Card key={index} className="project-card group">
+              <CardContent className="p-0 h-full">
+                {/* Project Thumbnail Header */}
                 <div className={`h-48 bg-gradient-to-br ${project.gradient} relative overflow-hidden`}>
-                  <div className="absolute inset-0 bg-black/20"></div>
-                  <div className="absolute top-4 left-4">
-                    <span className="inline-flex items-center gap-2 px-3 py-1 bg-black/30 text-white text-sm rounded-full">
+                  <div className="absolute inset-0 bg-black/30"></div>
+                  
+                  {/* Project Badges */}
+                  <div className="absolute top-4 left-4 flex gap-2">
+                    <span className="px-3 py-1 bg-black/50 text-white text-xs rounded-full font-medium">
+                      {project.category}
+                    </span>
+                    <span className={`px-3 py-1 text-xs rounded-full font-medium ${
+                      project.status === 'Live' 
+                        ? 'bg-green-500/20 text-green-400' 
+                        : 'bg-blue-500/20 text-blue-400'
+                    }`}>
+                      {project.status}
+                    </span>
+                  </div>
+
+                  {/* Year Badge */}
+                  <div className="absolute top-4 right-4">
+                    <span className="inline-flex items-center gap-1 px-3 py-1 bg-black/50 text-white text-xs rounded-full">
                       <Calendar className="h-3 w-3" />
                       {project.year}
                     </span>
                   </div>
+
+                  {/* Project Title Overlay */}
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <h3 className="text-2xl font-bold text-white text-center px-4">
+                    <h3 className="text-2xl font-bold text-white text-center px-4 group-hover:scale-110 transition-transform duration-300">
                       {project.title}
                     </h3>
                   </div>
+
+                  {/* Netflix-Style Hover Overlay */}
+                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <Button className="btn-netflix">
+                      <Play className="mr-2 h-4 w-4" fill="currentColor" />
+                      View Project
+                    </Button>
+                  </div>
                 </div>
 
-                {/* Project Content */}
-                <div className="p-6 space-y-4">
+                {/* Project Info Panel */}
+                <div className="p-6 space-y-4 bg-card flex-1">
                   <p className="text-muted-foreground text-sm leading-relaxed">
                     {project.description}
                   </p>
 
                   {/* Technologies */}
                   <div className="space-y-2">
-                    <h4 className="text-sm font-semibold text-primary">Technologies Used:</h4>
+                    <h4 className="text-sm font-bold text-primary flex items-center gap-2">
+                      <Code className="h-3 w-3" />
+                      Tech Stack
+                    </h4>
                     <div className="flex flex-wrap gap-2">
                       {project.technologies.map((tech, techIndex) => (
                         <span
                           key={techIndex}
-                          className="px-2 py-1 bg-muted text-xs rounded-md text-muted-foreground"
+                          className="px-2 py-1 bg-muted text-xs rounded-md text-muted-foreground 
+                                   hover:bg-primary hover:text-primary-foreground transition-colors cursor-default"
                         >
                           {tech}
                         </span>
@@ -105,13 +145,13 @@ const Projects = () => {
                     </div>
                   </div>
 
-                  {/* Features */}
+                  {/* Key Features */}
                   <div className="space-y-2">
-                    <h4 className="text-sm font-semibold text-primary">Key Features:</h4>
+                    <h4 className="text-sm font-bold text-primary">Key Features</h4>
                     <ul className="space-y-1">
-                      {project.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="text-xs text-muted-foreground flex items-center gap-2">
-                          <div className="w-1 h-1 bg-primary rounded-full"></div>
+                      {project.features.slice(0, 2).map((feature, featureIndex) => (
+                        <li key={featureIndex} className="text-xs text-muted-foreground flex items-start gap-2">
+                          <div className="w-1 h-1 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                           {feature}
                         </li>
                       ))}
@@ -120,13 +160,13 @@ const Projects = () => {
 
                   {/* Action Buttons */}
                   <div className="flex gap-3 pt-4">
-                    <Button size="sm" className="flex-1" asChild>
+                    <Button size="sm" className="flex-1 bg-primary hover:bg-primary/90" asChild>
                       <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                         <ExternalLink className="h-3 w-3 mr-2" />
                         Live Demo
                       </a>
                     </Button>
-                    <Button size="sm" variant="outline" asChild>
+                    <Button size="sm" variant="outline" className="border-border hover:bg-muted" asChild>
                       <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                         <Github className="h-3 w-3 mr-2" />
                         Code
@@ -139,15 +179,15 @@ const Projects = () => {
           ))}
         </div>
 
-        {/* GitHub CTA */}
+        {/* Netflix-Style CTA */}
         <div className="text-center mt-16">
-          <h3 className="text-2xl font-bold mb-4">Want to see more?</h3>
+          <h3 className="text-2xl font-bold mb-4 text-foreground">Interested in collaborating?</h3>
           <p className="text-muted-foreground mb-6">
-            Check out my GitHub profile for more projects and contributions
+            These projects represent just the beginning of my journey. Let's create something amazing together.
           </p>
-          <Button size="lg" variant="outline" className="btn-hero">
+          <Button size="lg" className="btn-netflix">
             <Github className="mr-2 h-5 w-5" />
-            View GitHub Profile
+            Explore More on GitHub
           </Button>
         </div>
       </div>

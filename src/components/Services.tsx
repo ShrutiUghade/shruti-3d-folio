@@ -61,14 +61,16 @@ const Services = () => {
   return (
     <section id="services" className="py-20 bg-background">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Services & <span className="bg-gradient-primary bg-clip-text text-transparent">Expertise</span>
+        {/* Netflix-Style Header */}
+        <div className="mb-16">
+          <h2 className="text-4xl md:text-6xl font-black mb-4 text-foreground" 
+              style={{ fontFamily: 'Montserrat, sans-serif' }}>
+            Services & <span className="text-netflix-glow">Expertise</span>
           </h2>
-          <div className="section-divider"></div>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            As a passionate frontend developer, I offer a range of services from web development to UI/UX design. 
-            I'm constantly learning and expanding my skill set.
+          <div className="section-divider-netflix"></div>
+          <p className="text-lg text-muted-foreground max-w-3xl">
+            Browse my services like Netflix originals. Each offering represents my commitment to 
+            quality, innovation, and creating exceptional digital experiences.
           </p>
         </div>
 
