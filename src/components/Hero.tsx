@@ -54,9 +54,15 @@ const Hero = () => {
                 variant="outline" 
                 className="border-primary text-primary hover:bg-primary hover:text-primary-foreground 
                          transition-all duration-300 font-semibold"
+                onClick={() => {
+                  const link = document.createElement('a');
+                  link.href = '/resume/Shruti-Ughade-Resume.docx';
+                  link.download = 'Shruti-Ughade-Resume.docx';
+                  link.click();
+                }}
               >
                 <Download className="mr-2 h-4 w-4" />
-                Download CV
+                Download Resume
               </Button>
             </div>
 
