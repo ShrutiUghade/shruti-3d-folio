@@ -91,7 +91,8 @@ const Hero = () => {
                   <img
                     src={profileImage}
                     alt="Shruti Ughade - Frontend Developer"
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
+                    style={{ objectPosition: 'center 20%' }}
                   />
                   {/* Netflix-style overlay on hover */}
                   <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent 
